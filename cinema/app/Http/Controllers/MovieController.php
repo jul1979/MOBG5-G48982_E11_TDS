@@ -13,7 +13,8 @@ class MovieController extends Controller
     //
     public function index()
     {
-       $movies= DB::select('select m.idMovie,s.idShow,s.start, m.title,r.idRoom,(r.capacity-s.soldTickets)as available from rooms r join shows s on r.idRoom=s.idRoom join movies m on m.idMovie=s.idMovie where s.start >CURRENT_TIMESTAMP ORDER BY s.start, HOUR(CURRENT_TIMESTAMP),m.title ASC');
+       //$movies= DB::select('select m.idMovie,s.idShow,s.start, m.title,r.idRoom,(r.capacity-s.soldTickets)as available from rooms r join shows s on r.idRoom=s.idRoom join movies m on m.idMovie=s.idMovie where s.start >CURRENT_TIMESTAMP ORDER BY s.start, HOUR(CURRENT_TIMESTAMP),m.title ASC');
+       $movies= Movie::movies();
 
         //dd($movies);
        return view('movies',["movies"=>$movies
@@ -21,6 +22,7 @@ class MovieController extends Controller
     }
 
 
+   //This method shows how to update a model
     public function update(Request $request,$id)
     {
         //dd("hello");

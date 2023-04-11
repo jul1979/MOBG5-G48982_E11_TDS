@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
     return view('template');
 })->name('home');
-Route::get('/movies',[MovieController::class, 'index'])->name('movie.index');
-Route::post('/buy/{id}',[MovieController::class, 'update'])->name('movie.update');
+Route::get('/movies',[MovieController::class, 'index'])->name('movies.index');
+Route::get('/movies/{id}',[MovieController::class, 'update'])->name('movies.like');
+

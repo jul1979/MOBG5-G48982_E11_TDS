@@ -10,7 +10,7 @@
     <script src="{{url('/js/script.js')}}"></script>
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>PAGE D'ACCUEIL- @yield('title','NOM DU PROJET')</title>
+    <title>NOM DU PROJET- @yield('title','NOM DU PROJET')</title>
 </head>
 <style>
 
@@ -22,12 +22,12 @@
       <img src="{{asset('images/esi_logo.png')}}" alt="ESI LOGO">
     </span>
     <h3>
-        WEB II-CINEMA
+        WEB II-Examen de seconde session 2020
     </h3>
 
 </header>
 <article id="mainArticle">
-    <h2> @yield('maintitle','ACCEUIL')</h2>
+    <h2> @yield('maintitle','HOME PAGE')</h2>
     <div class="container">
         @yield('content')
     </div>
@@ -36,13 +36,12 @@
     <ul class="nav flex-column">
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('home')}}">Home</a>
+          <a class="nav-link" href="{{route('home')}}">Home</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('movie.index')}}">Movies</a>
+   <a class="nav-link" href="{{route('movies.index')}}">Movies</a>
         </li>
-
     </ul>
 </nav>
 <footer id="pageFooter" style="text-align: center;background: #00BFFF;font-weight: 700">WEBG4-WEBII-48982-NRI

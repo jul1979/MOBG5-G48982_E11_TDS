@@ -31,5 +31,10 @@ class Movie extends Model
         return DB::select('select m.title,m.synopsis,m.rating from movies m where m.idMovie=?', [$id]);
     }
 
+    public static function movies()
+    {
+        return DB::select('select m.idMovie,s.idShow,s.start, m.title,r.idRoom,(r.capacity-s.soldTickets)as available from rooms r join shows s on r.idRoom=s.idRoom join movies m on m.idMovie=s.idMovie where s.start >CURRENT_TIMESTAMP ORDER BY s.start, HOUR(CURRENT_TIMESTAMP),m.title ASC');
+    }
+
 
 }
