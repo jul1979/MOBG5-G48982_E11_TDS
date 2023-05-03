@@ -12,6 +12,7 @@ class RepositoryController extends Controller
      */
     public function index()
     {
+
         return view('repos',['repos'=>Repository::getReposInfo()]);
 
     }
